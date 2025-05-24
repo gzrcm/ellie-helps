@@ -229,7 +229,13 @@ a:focus {
 
 .slider_section .detail-box {
   text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 100%;
+  overflow: visible; /* So text doesn't get clipped */
+  box-sizing: border-box;
 }
+
 
 .slider_section .detail-box h1,
 .slider_section .detail-box h2,
@@ -660,17 +666,49 @@ h1, h2, h3, .navbar-brand {
 }
 
 .slider_section h1 {
-  font-size: clamp(2rem, 5vw, 4rem); /* Scales between 2rem and 4rem based on screen width */
+  font-size: clamp(1.5rem, 6vw, 3rem); /* Responsive size between min & max */
+  white-space: normal; /* Allow wrapping */
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: normal;
-  text-align: center; /* Optional: center align */
-  line-height: 1.2; /* Optional: adjust line spacing */
+  line-height: 1.2;
   margin-bottom: 1rem;
+  text-align: center;  /* Optional */
+  max-width: 100%;     /* Prevent overflow */
+  box-sizing: border-box; /* Ensure padding included */
 }
 
 /* Optional: Style h3 similarly if needed */
 .slider_section h3 {
   font-size: clamp(1.25rem, 3vw, 2rem);
   text-align: center;
+
+  @media (max-width: 640px) {
+    font-size: clamp(1.25rem, 3vw, 2rem)/2;
+  }
+}
+
+.slider_section .col-lg-10 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 100%;
+  overflow: visible; /* So text doesn't get clipped */
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 640px) {
+    h1 {
+        font-size:1.9rem !important
+    }
+
+    h2 {
+        font-size: 2.5rem !important
+    }
+
+    h3 {
+        font-size: 2rem !important
+    }
+
+    .sqsrte-large {
+        font-size: 1.25rem !important
+    }
 }

@@ -363,6 +363,30 @@ I’m here to make your day to day life easier.            </p>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
 
+<script>
+function fitTextToContainer(element, maxFontSize = 60, minFontSize = 12) {
+  const parentWidth = element.parentElement.offsetWidth;
+  let fontSize = maxFontSize;
+
+  element.style.fontSize = fontSize + "px";
+  element.style.whiteSpace = "nowrap";
+
+  while (element.scrollWidth > parentWidth && fontSize > minFontSize) {
+    fontSize -= 1;
+    element.style.fontSize = fontSize + "px";
+  }
+}
+
+window.addEventListener('load', () => {
+  const headers = document.querySelectorAll('.fit-text');
+  headers.forEach(header => fitTextToContainer(header));
+});
+
+window.addEventListener('resize', () => {
+  const headers = document.querySelectorAll('.fit-text');
+  headers.forEach(header => fitTextToContainer(header));
+});
+</script>
 </body>
 
 </html>
