@@ -697,11 +697,11 @@ h1, h2, h3, .navbar-brand {
 
 @media screen and (max-width: 640px) {
     h1 {
-        font-size:1.9rem !important
+        font-size:1.5rem !important
     }
 
     h2 {
-        font-size: 2.5rem !important
+        font-size: 2.0rem !important
     }
 
     h3 {
